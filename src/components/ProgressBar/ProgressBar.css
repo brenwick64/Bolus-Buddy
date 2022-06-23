@@ -1,0 +1,60 @@
+.bar-container {
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.progress-bar-outside {
+    display: flex;
+    height: 20px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+}
+
+.progress-bar-inside {
+    height: 100%;
+    background-color: aquamarine;
+    transition: width .75s ease-in-out;
+}
+
+.progress-bar-checkmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgb(127, 187, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+    animation: bounceIn 0.5s ease-in-out forwards;
+    animation-delay: 0.75s;
+    opacity: 0;
+}
+
+.progress-bar-checkmark p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
