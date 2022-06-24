@@ -1,0 +1,67 @@
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 35rem;
+    max-height: 55rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: aquamarine;
+}
+
+.splash-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-4rem);
+}
+
+.splash-title {
+    color: rgb(245, 117, 117);
+    font-size: 2.6rem;
+}
+
+.splash-title span {
+    color: red;
+    font-size: 6rem;
+}
+
+.splash-title-1 {
+    transform: translateX(-4rem);
+}
+
+.splash-title-2 {
+    margin-left: 6rem;
+    transform: translateY(-20px);
+}
+
+.splash-logo {
+    width: 10rem;
+    height: 10rem;
+    animation: heartBeat 1.2s infinite linear;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.1);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

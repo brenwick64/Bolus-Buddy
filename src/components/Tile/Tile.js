@@ -21,7 +21,7 @@ function Tile({ updateState, metric, img, label }) {
         <div className='tile'>
             <img className='tile-img' alt='' src={img} />
             <p className='tile-text'>{label}</p>
-            <input className='tile-input' type="number" value={value} onChange={e => setValue(e.target.value)} onBlur={handleBlur} onKeyUp={handleEnter}></input>
+            <input className='tile-input' inputMode='decimal' type="number" value={value} onChange={e => setValue(e.target.value)} onBlur={handleBlur} onKeyUp={handleEnter}></input>
         </div>
     )
 }

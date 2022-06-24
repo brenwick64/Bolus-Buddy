@@ -1,5 +1,6 @@
 import './Main.css'
 import React, { useEffect, useReducer, useState } from 'react'
+import { motion } from 'framer-motion';
 
 // Components
 import Tile from '../../components/Tile/Tile'
@@ -12,6 +13,11 @@ import BG from '../../img/bloodsugar.png';
 import Basal from '../../img/basal.png';
 import Bolus from '../../img/syringe.png';
 
+const variants = {
+    hidden: { opacity: 0, scale: 0.6 },
+    enter: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.6 }
+}
 
 
 function Main() {
@@ -26,7 +32,7 @@ function Main() {
     );
 
     useEffect(() => {
-        // Extracts state from 
+        // Extracts completion state from child component's state
         let tempCount = 0
         const keys = Object.keys(state);
         keys.forEach(key => {
@@ -38,7 +44,15 @@ function Main() {
 
 
     return (
-        <div className='main-screen'>
+        <motion.div
+            className='main-screen'
+            key='splash'
+            variants={variants}
+            initial='hidden'
+            animate='enter'
+            exit='exit'
+            transition={1000}
+        >
             <ProgressBar completedCount={completedCount} />
             <div className='tile-container'>
                 <Tile updateState={updateState} metric='carbs' label='Carbs (g)' img={Carbs} />
@@ -49,7 +63,7 @@ function Main() {
             <div className='bottom'>
                 <SubmitButton completedCount={completedCount} />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

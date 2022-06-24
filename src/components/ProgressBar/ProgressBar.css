@@ -58,3 +58,11 @@
         transform: scale(1);
     }
 }
+
+
+/* Mobile Screen */
+@media screen and (max-width: 500px) {
+    .bar-container {
+        width: 85%;
+    }
+}

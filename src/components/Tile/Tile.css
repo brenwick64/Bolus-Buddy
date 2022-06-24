@@ -23,13 +23,14 @@
     height: 60px;
     border-radius: 8px;
     text-align: center;
-    transition: background-color 0.25s;
-    background-color: powderblue;
+    transition: all 0.25s;
+    background-color: rgb(127, 187, 255);
+    filter: opacity(50%);
     font-family: inherit;
     font-size: 1.4rem;
     caret-color: transparent;
 }
 
 .tile-input:focus {
-    background-color: rgb(127, 187, 255);
+    filter: opacity(100%);
 }
