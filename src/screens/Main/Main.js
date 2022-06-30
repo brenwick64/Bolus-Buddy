@@ -61,7 +61,7 @@ function Main() {
                 <Tile updateState={updateState} metric='bolus' label='Previous Bolus (u)' img={Bolus} />
             </div>
             <div className='bottom'>
-                <SubmitButton completedCount={completedCount} />
+                <SubmitButton completedCount={completedCount} state={state} />
             </div>
         </motion.div>
     )

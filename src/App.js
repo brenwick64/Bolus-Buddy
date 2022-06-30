@@ -10,6 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 //Pages 
 import Splash from './screens/Splash/Splash';
 import Main from './screens/Main/Main';
+import Results from './screens/Results/Results';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 3000)
+    }, 100)
   })
 
   return (
@@ -27,7 +28,7 @@ function App() {
       <AnimatePresence exitBeforeEnter>
         <Routes location={location}>
           <Route path='/' element={loading ? <Splash /> : <Main />} />
-          <Route path='/main' element={<Main />} />
+          <Route path='/results' element={<Results />} />
         </Routes>
       </AnimatePresence>
     </div >

@@ -17,7 +17,7 @@
 .progress-bar-inside {
     height: 100%;
     background-color: aquamarine;
-    transition: width .75s ease-in-out;
+    transition: width .50s ease-in-out;
 }
 
 .progress-bar-checkmark {
@@ -33,7 +33,7 @@
     background-color: rgb(127, 187, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
     animation: bounceIn 0.5s ease-in-out forwards;
-    animation-delay: 0.75s;
+    animation-delay: 0.50s;
     opacity: 0;
 }
 
