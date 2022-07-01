@@ -1,0 +1,46 @@
+#gear-1 {
+    transform: translateY(3rem);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: popUp 0.5s forwards, forwardSpin 1s linear infinite forwards;
+    animation-delay: 0.5s, 1s
+}
+
+#gear-2 {
+    transform: translateY(3rem);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: popUp 0.5s forwards, backwardSpin 1s linear infinite forwards;
+    animation-delay: 0.5s, 1s
+}
+
+@keyframes popUp {
+    from {
+        transform: translateY(3rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes forwardSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes backwardSpin {
+    from {
+        transform: rotate(359deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
