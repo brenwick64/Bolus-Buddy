@@ -16,19 +16,15 @@ function Results() {
         const res = await fetch(`${BOLUS_BUDDY_API}/bolus?` + new URLSearchParams({ bolus: location.state.bolus }))
         const jsonData = await res.json()
         setResults(jsonData)
-        setLoading(false)
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            getData();
-        }, 2000000)
-
+        getData()
     }, []);
 
     return (
         <>
-            {loading ? <ResultsLoading /> : <ResultsPage results={results} />}
+            {loading ? <ResultsLoading setLoading={setLoading} results={results} /> : <ResultsPage results={results} />}
         </>
     )
 }

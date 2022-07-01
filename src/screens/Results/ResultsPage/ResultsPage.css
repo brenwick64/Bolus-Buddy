@@ -1,4 +1,5 @@
 .results-page-screen {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,4 +10,20 @@
     max-height: 55rem;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.backarrow-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.backarrow {
+    color: rgb(127, 187, 255);
+    filter: opacity(50%);
+    transition: all 0.4s;
+}
+
+.backarrow:hover {
+    filter: opacity(100%);
 }

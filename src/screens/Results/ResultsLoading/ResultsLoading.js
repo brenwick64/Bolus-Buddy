@@ -1,5 +1,5 @@
 import './ResultsLoading.css'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import RobotHead from '../../../components/AnimatedSVGs/RobotHead/RobotHead'
 
@@ -9,7 +9,44 @@ const variants = {
     exit: { opacity: 0, scale: 0.6 }
 }
 
-function ResultsLoading() {
+const messages = [
+    { msg: "injecting form data", ms: 3000 },
+    { msg: "iterating through predictions", ms: 2000 },
+    { msg: "calculating best outcome", ms: 2000 },
+    { msg: "finished!", ms: 2000 },
+]
+
+function ResultsLoading({ setLoading, results }) {
+    const [currentMessage, setCurrentMessage] = useState("")
+
+    // Dispatches each message, exexution time basesd on cumulative time of messages
+    const iterateMessages = () => {
+        // Will only connect if data is fetched my parent component
+        if (results) {
+            let totalMs = 0
+            messages.forEach((value, index) => {
+                setTimeout(() => {
+                    setCurrentMessage(value.msg)
+                }, (totalMs + value.ms))
+                totalMs = totalMs + value.ms
+            })
+            setTimeout(() => {
+                setLoading(false)
+            }, (totalMs + 2000))
+        }
+        // Waits for form data from parent
+        else {
+            setTimeout(() => {
+                setCurrentMessage('connecting')
+            }, (1000))
+        }
+    }
+
+    useEffect(() => {
+        iterateMessages();
+    }, [results])
+
+
     return (
         <motion.div
             className='results-loading-screen'
@@ -21,6 +58,9 @@ function ResultsLoading() {
             transition={1000}
         >
             <RobotHead />
+            <div className='results-loading-message-container'>
+                <p key={currentMessage} className='results-loading-message'>{currentMessage}</p>
+            </div>
         </motion.div>
     )
 }
