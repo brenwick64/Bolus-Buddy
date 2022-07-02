@@ -1,7 +1,7 @@
 .results-loading-screen {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     height: 100%;
@@ -9,4 +9,30 @@
     max-height: 55rem;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.results-loading-message {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.results-loading-message-container {
+    height: 6rem;
+}
+
+
+/* Mobile Screen */
+@media screen and (max-width: 500px) {
+    .results-loading-screen {
+        justify-content: flex-start;
+        margin-top: 3rem;
+        position: fixed;
+        max-height: 100vh;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }

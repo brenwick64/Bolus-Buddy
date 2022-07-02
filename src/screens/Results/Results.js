@@ -16,6 +16,9 @@ function Results() {
         const res = await fetch(`${BOLUS_BUDDY_API}/bolus?` + new URLSearchParams({ bolus: location.state.bolus }))
         const jsonData = await res.json()
         setResults(jsonData)
+
+        //DEBUG
+        // setLoading(false)
     }
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import './ResultsLoading.css'
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import RobotHead from '../../../components/AnimatedSVGs/RobotHead/RobotHead'
+import RobotHeadGears from '../../../components/AnimatedSVGs/RobotHeadGears/RobotHeadGears'
 
 const variants = {
     hidden: { opacity: 0, scale: 0.6 },
@@ -57,7 +57,7 @@ function ResultsLoading({ setLoading, results }) {
             exit='exit'
             transition={1000}
         >
-            <RobotHead />
+            <RobotHeadGears />
             <div className='results-loading-message-container'>
                 <p key={currentMessage} className='results-loading-message'>{currentMessage}</p>
             </div>

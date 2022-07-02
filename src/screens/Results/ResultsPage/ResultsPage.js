@@ -2,7 +2,12 @@ import './ResultsPage.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import ResultsEntry from './ResultsEntry/ResultsEntry'
+import RobotHeadAntenna from '../../../components/AnimatedSVGs/RobotHeadAntenna/RobotHeadAntenna'
+
+// React Icons
 import { IoMdArrowRoundBack } from 'react-icons/io'
+
 
 const variants = {
     hidden: { opacity: 0, scale: 0.6 },
@@ -24,12 +29,10 @@ function ResultsPage({ results }) {
             <Link to='/'>
                 <div className='backarrow-container'>
                     <IoMdArrowRoundBack className='backarrow' size={50} />
-                    {/* <div>Back to Menu</div> */}
                 </div>
             </Link>
-            <div>{results.prediction}</div>
-
-
+            <RobotHeadAntenna />
+            <ResultsEntry results={results} />
         </motion.div>
     )
 }

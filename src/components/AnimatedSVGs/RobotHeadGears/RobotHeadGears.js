@@ -1,4 +1,4 @@
-import './RobotHead.css'
+import './RobotHeadGears.css'
 import React from 'react'
 
 function RobotHead() {

@@ -7,7 +7,7 @@
     transition: opacity 0.25s;
     transition-delay: 1.25s;
     opacity: 1;
-    animation: pulse-blue 2s infinite;
+    animation: pulse-blue 1.5s infinite;
     animation-delay: 2.5s;
 }
 

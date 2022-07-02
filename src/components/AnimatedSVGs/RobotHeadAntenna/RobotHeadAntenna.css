@@ -1,0 +1,20 @@
+#antenna {
+    transform: translateY(6.5rem);
+    animation: popUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+@keyframes popUp {
+    0% {
+        transform: translateY(6.5rem);
+    }
+
+    60% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
