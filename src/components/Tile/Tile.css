@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 0.5rem;
-    background-color: white;
+    background-color: var(--color-background-1);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
     border-radius: 10px;
 }
@@ -24,7 +24,7 @@
     border-radius: 8px;
     text-align: center;
     transition: all 0.25s;
-    background-color: rgb(127, 187, 255);
+    background-color: var(--color-primary);
     filter: opacity(50%);
     font-family: inherit;
     font-size: 1.4rem;

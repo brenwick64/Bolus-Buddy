@@ -10,12 +10,12 @@
     max-height: 55rem;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--color-background-1);
 }
 
 .tile-container {
     width: calc(350px + 1.2rem);
     height: fit-content;
-    background-color: #fff;
     display: grid;
     grid-template-columns: 175px 175px;
     grid-row: auto auto;

@@ -9,6 +9,7 @@
     opacity: 1;
     animation: pulse-blue 1.5s infinite;
     animation-delay: 2.5s;
+    color: var(--text-color-1);
 }
 
 .submit-btn-disabled {

@@ -28,7 +28,7 @@ function ResultsEntry({ results }) {
         <div className='results-container'>
             <h2 className='results-title'>Results</h2>
             {dummyData.map((entry, index) => {
-                const delay = 1.75 + (index * .35)
+                const delay = 1.75 + (index * .25)
                 return (
                     <div className='results-entry' key={entry.bg} style={{ animationDelay: delay + 's' }}>
                         {arrowParser(entry.arrow)}

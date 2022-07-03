@@ -19,7 +19,7 @@
 .results-title {
     opacity: 0;
     font-family: 'Share Tech Mono', monospace;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     animation: resultsFadeIn 1s ease forwards;
     animation-delay: 1s;
 }
