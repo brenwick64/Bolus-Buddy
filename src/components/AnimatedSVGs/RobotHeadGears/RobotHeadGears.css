@@ -14,6 +14,10 @@
     animation-delay: 0.5s, 1s
 }
 
+#antenna-gears {
+    transform: translateY(6.5rem);
+}
+
 
 @keyframes fadeIn {
     from {

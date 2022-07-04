@@ -1,9 +1,19 @@
+import './Results.css'
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import ResultsLoading from './ResultsLoading/ResultsLoading';
-import ResultsPage from './ResultsPage/ResultsPage';
+import ResultsReport from './ResultsReport/ResultsReport';
 
+// React Icons
+import { IoMdArrowRoundBack } from 'react-icons/io'
+
+const variants = {
+    hidden: { opacity: 0, scale: 0.6 },
+    enter: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.6 }
+}
 
 function Results() {
     const location = useLocation();
@@ -27,7 +37,22 @@ function Results() {
 
     return (
         <>
-            {loading ? <ResultsLoading setLoading={setLoading} results={results} /> : <ResultsPage results={results} />}
+            <motion.div
+                className='results-page'
+                key='results'
+                variants={variants}
+                initial='hidden'
+                animate='enter'
+                exit='exit'
+                transition={1000}
+            >
+                <Link to='/'>
+                    <div className='backarrow-container'>
+                        <IoMdArrowRoundBack className='backarrow' size={50} />
+                    </div>
+                </Link>
+                {loading ? <ResultsLoading setLoading={setLoading} results={results} /> : <ResultsReport results={results} />}
+            </motion.div>
         </>
     )
 }

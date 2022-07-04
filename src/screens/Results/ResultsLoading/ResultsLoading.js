@@ -1,17 +1,10 @@
 import './ResultsLoading.css'
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import RobotHeadGears from '../../../components/AnimatedSVGs/RobotHeadGears/RobotHeadGears'
 
-const variants = {
-    hidden: { opacity: 0, scale: 0.6 },
-    enter: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.6 }
-}
 
 const messages = [
     { msg: "injecting form data", ms: 3000 },
-    { msg: "iterating through predictions", ms: 2000 },
     { msg: "calculating best outcome", ms: 2000 },
     { msg: "finished!", ms: 2000 },
 ]
@@ -48,20 +41,14 @@ function ResultsLoading({ setLoading, results }) {
 
 
     return (
-        <motion.div
-            className='results-loading-screen'
-            key='resultLoad'
-            variants={variants}
-            initial='hidden'
-            animate='enter'
-            exit='exit'
-            transition={1000}
-        >
-            <RobotHeadGears />
-            <div className='results-loading-message-container'>
-                <p key={currentMessage} className='results-loading-message'>{currentMessage}</p>
+        <>
+            <div className='results-loading'>
+                <RobotHeadGears />
+                <div className='results-loading-message-container'>
+                    <p key={currentMessage} className='results-loading-message'>{currentMessage}</p>
+                </div>
             </div>
-        </motion.div>
+        </>
     )
 }
 

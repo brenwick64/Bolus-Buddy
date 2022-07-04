@@ -1,8 +1,23 @@
 #antenna {
     transform: translateY(6.5rem);
     animation: popUp 1s ease forwards;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
 }
+
+#antenna-gear-1 {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: forwardSpin 1s linear infinite, popDown 0.5s forwards;
+    animation-delay: 0s, 0.5s
+}
+
+#antenna-gear-2 {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: backwardSpin 1s linear infinite, popDown 0.5s forwards;
+    animation-delay: 0s, 0.5s
+}
+
 
 
 @keyframes popUp {
@@ -16,5 +31,40 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes popDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    60% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        transform: translateY(6.5rem);
+    }
+}
+
+
+@keyframes forwardSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes backwardSpin {
+    from {
+        transform: rotate(359deg);
+    }
+
+    to {
+        transform: rotate(0deg);
     }
 }

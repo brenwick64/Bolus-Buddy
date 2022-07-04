@@ -1,5 +1,4 @@
 .main-screen {
-    padding-bottom: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -32,6 +31,7 @@
 /* Mobile Screen */
 @media screen and (max-width: 500px) {
     .main-screen {
+        padding-bottom: 3rem;
         position: fixed;
         max-height: 100vh;
         max-width: 100vw;

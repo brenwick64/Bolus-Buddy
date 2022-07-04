@@ -21,7 +21,7 @@
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: 0.5rem;
     animation: resultsFadeIn 1s ease forwards;
-    animation-delay: 1s;
+    animation-delay: 2s;
 }
 
 .results-entry-right {
