@@ -7,7 +7,7 @@ import ResultsLoading from './ResultsLoading/ResultsLoading';
 import ResultsReport from './ResultsReport/ResultsReport';
 
 // React Icons
-import { IoMdArrowRoundBack } from 'react-icons/io'
+import { BiArrowBack } from 'react-icons/bi'
 
 const variants = {
     hidden: { opacity: 0, scale: 0.6 },
@@ -48,7 +48,7 @@ function Results() {
             >
                 <Link to='/'>
                     <div className='backarrow-container'>
-                        <IoMdArrowRoundBack className='backarrow' size={50} />
+                        <BiArrowBack className='backarrow' size={45} />
                     </div>
                 </Link>
                 {loading ? <ResultsLoading setLoading={setLoading} results={results} /> : <ResultsReport results={results} />}

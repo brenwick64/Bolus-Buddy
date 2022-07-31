@@ -8,7 +8,7 @@ function SubmitButton({ completedCount, state }) {
     }
 
     return (
-        <Link to="/results" state={state} >
+        <Link to="/results" state={state} style={completedCount === 4 ? {} : { cursor: 'default', pointerEvents: 'none' }}>
             <button className={completedCount === 4 ? 'submit-btn' : 'submit-btn submit-btn-disabled'} onClick={handleSubmit}>Submit</button>
         </Link>
     )
