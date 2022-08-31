@@ -5,6 +5,14 @@
     gap: 1rem;
 }
 
+.results-title {
+    opacity: 0;
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 0.5rem;
+    animation: resultsFadeIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
 .results-entry {
     height: 6rem;
     display: flex;
@@ -16,29 +24,40 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 
-.results-title {
-    opacity: 0;
-    font-family: 'Share Tech Mono', monospace;
-    margin-bottom: 0.5rem;
-    animation: resultsFadeIn 1s ease forwards;
-    animation-delay: 2s;
+.results-content {
+    width: 90%;
+    padding: 0rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .results-entry-right {
-    padding: 0 0.5rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     gap: 0.5rem;
 }
 
 .results-entry-left {
-    padding: 0 0.5rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 0.5rem;
 }
 
 .results-text {
-    font-size: 1.2rem;
+    width: min-content;
+    font-size: 1.1rem;
 }
+
+.results-number {
+    justify-self: flex-start;
+}
+
 
 @keyframes resultsFadeIn {
     from {

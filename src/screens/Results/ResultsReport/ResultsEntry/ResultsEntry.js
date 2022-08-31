@@ -24,21 +24,29 @@ const arrowParser = (arrow) => {
 
 
 function ResultsEntry({ results }) {
+    const resultSet = [
+        { bolus: results.aggressive_bolus, bg: 100, arrow: 'up', label: 'Aggressive' },
+        { bolus: results.recommended_bolus, bg: 101, arrow: 'right', label: 'Recommended' },
+        { bolus: results.passive_bolus, bg: 102, arrow: 'down', label: 'Passive' },
+    ]
+
     return (
         <div className='results-container'>
             <h2 className='results-title'>Results</h2>
-            {dummyData.map((entry, index) => {
+            {resultSet.map((entry, index) => {
                 const delay = 2.5 + (index * .25)
                 return (
-                    <div className='results-entry' key={entry.bg} style={{ animationDelay: delay + 's' }}>
+                    <div className='results-entry' key={entry.label} style={{ animationDelay: delay + 's' }}>
                         {arrowParser(entry.arrow)}
-                        <div className='results-entry-right'>
-                            <p className='results-text'>{entry.label}</p>
-                            <p><strong>{entry.bolus}u</strong></p>
-                        </div>
-                        <div className='results-entry-left'>
-                            <p>Estimated BG:</p>
-                            <p><strong>{entry.bg}</strong></p>
+                        <div className='results-content'>
+                            <div className='results-entry-left'>
+                                <p className='results-text'>{entry.label}</p>
+                                <p className='results-number'><strong>{entry.bolus.toFixed(2)}u</strong></p>
+                            </div>
+                            <div className='results-entry-right'>
+                                <p>Estimated BG:</p>
+                                <p className='results-number'><strong>{entry.bg}</strong></p>
+                            </div>
                         </div>
                     </div>
                 )

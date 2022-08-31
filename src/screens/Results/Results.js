@@ -38,7 +38,6 @@ function Results() {
         })
         const jsonData = await res.json()
         setResults(jsonData)
-        console.log(jsonData);
 
         //DEBUG
         // setLoading(false)
