@@ -4,8 +4,8 @@ import RobotHeadGears from '../../../components/AnimatedSVGs/RobotHeadGears/Robo
 
 
 const messages = [
-    { msg: "injecting form data", ms: 3000 },
-    { msg: "calculating best outcome", ms: 2000 },
+    { msg: "uploading form data", ms: 3000 },
+    { msg: "calculating optimal bolus", ms: 2000 },
     { msg: "finished!", ms: 2000 },
 ]
 
@@ -14,7 +14,7 @@ function ResultsLoading({ setLoading, results }) {
 
     // Dispatches each message, exexution time basesd on cumulative time of messages
     const iterateMessages = () => {
-        // Will only connect if data is fetched my parent component
+        // Will only connect if data is fetched by parent component
         if (results) {
             let totalMs = 0
             messages.forEach((value, index) => {

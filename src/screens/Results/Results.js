@@ -23,9 +23,22 @@ function Results() {
     const [results, setResults] = useState(null);
 
     const getData = async () => {
-        const res = await fetch(`${BOLUS_BUDDY_API}/bolus?` + new URLSearchParams({ bolus: location.state.bolus }))
+        const res = await fetch(`${BOLUS_BUDDY_API}/prediction`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                carbs: location.state.carbs,
+                bg: location.state.bg,
+                basal: location.state.basal,
+                bolus: location.state.bolus
+            })
+        })
         const jsonData = await res.json()
         setResults(jsonData)
+        console.log(jsonData);
 
         //DEBUG
         // setLoading(false)
