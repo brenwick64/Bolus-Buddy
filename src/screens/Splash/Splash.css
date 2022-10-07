@@ -9,7 +9,7 @@
     max-height: 55rem;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-background-1);
 }
 
 .splash-title-container {
@@ -25,7 +25,8 @@
 }
 
 .splash-title span {
-    color: red;
+    color: rgb(245, 117, 117);
+
     font-size: 6rem;
 }
 

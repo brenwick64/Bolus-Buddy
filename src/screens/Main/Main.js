@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Tile from '../../components/Tile/Tile'
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import SubmitButton from '../../components/SubmitButton/SubmitButton';
+import NotificationBanner from '../../components/NotificationBanner/NotificationBanner';
 
 // Images
 import Carbs from '../../img/burger.png';
@@ -53,6 +54,7 @@ function Main() {
             exit='exit'
             transition={1000}
         >
+            <NotificationBanner />
             <ProgressBar completedCount={completedCount} />
             <div className='tile-container'>
                 <Tile updateState={updateState} metric='carbs' label='Carbs (g)' img={Carbs} />
