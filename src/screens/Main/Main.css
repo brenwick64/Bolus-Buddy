@@ -33,6 +33,7 @@
 /* Mobile Screen */
 @media screen and (max-width: 500px) {
     .main-screen {
+        overflow: visible;
         padding-bottom: 3rem;
         position: fixed;
         max-height: 100vh;

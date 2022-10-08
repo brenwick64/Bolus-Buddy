@@ -60,3 +60,11 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     background-color: var(--color-background-2);
 }
+
+
+/* Mobile Screen */
+@media screen and (max-width: 500px) {
+    .App {
+        background-color: var(--color-background-1);
+    }
+}
