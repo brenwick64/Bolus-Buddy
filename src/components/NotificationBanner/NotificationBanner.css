@@ -1,5 +1,6 @@
 .notification-banner {
     position: absolute;
+    z-index: 3;
     top: 0;
     display: flex;
     flex-direction: row;
@@ -73,14 +74,14 @@
 
     100% {
         opacity: 1;
-        transform: translateY(0%)
+        transform: translateY(-25%)
     }
 }
 
 @keyframes dropOutMobile {
     0% {
         opacity: 1;
-        transform: translateY(0%)
+        transform: translateY(-25%)
     }
 
     100% {
