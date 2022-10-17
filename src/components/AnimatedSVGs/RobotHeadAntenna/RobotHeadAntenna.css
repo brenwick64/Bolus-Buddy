@@ -1,3 +1,8 @@
+.animated-svg {
+    width: 250px;
+    height: 304px;
+}
+
 #antenna {
     transform: translateY(6.5rem);
     animation: popUp 1s ease forwards;

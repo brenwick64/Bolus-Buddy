@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import TileToolTip from './TileToolTip/TileToolTip';
 import './Tile.css';
 
 
-function Tile({ updateState, metric, img, label }) {
+function Tile({ infoToggled, tooltipText, updateState, metric, img, label }) {
     const [value, setValue] = useState("")
 
     const handleBlur = () => {
@@ -19,6 +20,7 @@ function Tile({ updateState, metric, img, label }) {
 
     return (
         <div className='tile'>
+            <TileToolTip infoToggled={infoToggled} tooltipText={tooltipText} metric={metric} />
             <img className='tile-img' alt='' src={img} />
             <p className='tile-text'>{label}</p>
             <input className='tile-input' inputMode='decimal' type="number" value={value} onChange={e => setValue(e.target.value)} onBlur={handleBlur} onKeyUp={handleEnter}></input>

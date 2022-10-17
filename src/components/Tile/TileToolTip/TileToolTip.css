@@ -1,0 +1,87 @@
+.tile-tooltip {
+    padding: 0rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    position: absolute;
+    top: -45%;
+    z-index: 2;
+    width: 10rem;
+    height: 6rem;
+    border-radius: 1rem;
+    background-color: var(--color-background-1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+}
+
+.tile-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: calc(50% - 7px);
+    border-style: solid;
+    border-width: 7px 7px 0;
+    border-color: var(--color-background-1) transparent;
+    display: block;
+    width: 0;
+}
+
+.tile-tooltip-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tile-tooltip-active {
+    animation: growIn 0.4s ease forwards;
+}
+
+.tile-tooltip-inactive {
+    animation: growOut 0.25s ease forwards;
+    /* overrides specificity of custom animation times for cleanup */
+    animation-delay: 0s !important;
+}
+
+.carbs-tooltip {
+    animation-delay: 0.1s;
+}
+
+.bg-tooltip {
+    animation-delay: 0.15s;
+}
+
+.basal-tooltip {
+    animation-delay: 0.2s;
+}
+
+.bolus-tooltip {
+    animation-delay: 0.25s;
+}
+
+
+@keyframes growIn {
+    0% {
+        transform: scale(0)
+    }
+
+    70% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes growOut {
+    0% {
+        transform: scale(1)
+    }
+
+    15% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(0)
+    }
+}

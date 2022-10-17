@@ -1,9 +1,10 @@
 .info-button {
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
+    top: 2.25rem;
+    right: 50%;
+    transform: translateX(50%);
     border-radius: 50%;
     padding: 0.2rem;
     display: flex;
@@ -17,24 +18,23 @@
 
 .info-button:hover {
     animation: bounce 0.5s ease-in-out forwards;
-    transition: all 0.5s;
 }
 
 .info-splashscreen-bg {
     position: absolute;
     z-index: 1;
-    top: 2.1rem;
-    right: 2.25rem;
+    top: 3.25rem;
+    right: 47%;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     background-color: rgba(0, 0, 100, 0.25);
     z-index: 1;
-    transition: all 0.4s;
+    transition: all 0.3s;
 }
 
 .info-splashscreen-bg-active {
-    transform: scale(200);
+    transform: scale(125);
 }
 
 .info-splashscreen-tooltips {
@@ -48,180 +48,31 @@
     transform: translate(-50%, 0%);
 }
 
-.tooltip {
-    padding: 0rem 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0);
-    position: absolute;
-    z-index: 2;
-    width: 10rem;
-    height: 6rem;
-    border-radius: 1rem;
-    background-color: var(--color-background-1);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
-}
-
-.tooltip-text {
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-
-/* .tooltip {
-    position: absolute;
-    z-index: 2;
-    top: -40px;
-    opacity: 0;
-    padding: 2px 10px;
-    transition: all .3s;
-    white-space: nowrap;
-    font-family: var(--tooltip-font);
-    border-radius: 20px;
-    background-color: var(--color-background-1);
-} */
-
-.tooltip::after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: calc(50% - 7px);
-    border-style: solid;
-    border-width: 7px 7px 0;
-    border-color: var(--color-background-1) transparent;
-    display: block;
-    width: 0;
-}
-
-.tooltip-active {
-    animation: growIn 0.4s ease forwards;
-}
-
-.tooltip-inactive {
-    animation: growOut 0.25s ease forwards;
-}
-
-
-/* Tooltip Types */
-
-.tooltip-carbs {
-    top: -5.25rem;
-    left: 0.67rem;
-}
-
-.tooltip-carbs-active {
-    animation-delay: 0.1s
-}
-
-.tooltip-bg {
-    top: -5.25rem;
-    left: 13rem;
-}
-
-.tooltip-bg-active {
-    animation-delay: 0.15s
-}
-
-.tooltip-basal {
-    top: 8.25rem;
-    left: 0.67rem;
-}
-
-.tooltip-basal-active {
-    animation-delay: 0.2s
-}
-
-.tooltip-bolus {
-    top: 8.25rem;
-    left: 13rem;
-}
-
-.tooltip-bolus-active {
-    animation-delay: 0.25s
-}
-
-
-@media screen and (max-width: 500px) {
-    .info-button {
-        top: -1.25rem;
-        right: 2rem;
-    }
-
-    .info-splashscreen-bg {
-        top: 0;
-        right: 3rem;
-    }
-
-    .tooltip-carbs {
-        top: -10rem;
-        left: -2rem;
-    }
-
-    .tooltip-bg {
-        top: -10rem;
-        left: 10rem;
-    }
-
-    .tooltip-basal {
-        top: 4rem;
-        left: -2rem;
-    }
-
-    .tooltip-bolus {
-        top: 4rem;
-        left: 10rem;
-    }
-}
-
-
-
-
-
-
 @keyframes bounce {
     0% {
-        transform: scale(1);
+        transform: translateX(50%) scale(1);
     }
 
     65% {
-        transform: scale(1.25);
+        transform: translateX(50%) scale(1.25);
     }
 
     90% {
-        transform: scale(0.9)
+        transform: translateX(50%) scale(0.9)
     }
 
     100% {
-        transform: scale(1);
+        transform: translateX(50%) scale(1);
     }
 }
 
-
-@keyframes growIn {
-    0% {
-        transform: scale(0)
+/* Mobile Screen */
+@media screen and (max-width: 500px) {
+    .info-button {
+        top: 0rem
     }
 
-    85% {
-        transform: scale(1.2)
-    }
-
-    100% {
-        transform: scale(1)
-    }
-}
-
-@keyframes growOut {
-    0% {
-        transform: scale(1)
-    }
-
-    15% {
-        transform: scale(1.2)
-    }
-
-    100% {
-        transform: scale(0)
+    .info-splashscreen-bg {
+        top: 1rem;
     }
 }

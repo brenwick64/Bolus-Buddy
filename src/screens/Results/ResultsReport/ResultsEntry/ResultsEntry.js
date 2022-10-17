@@ -2,13 +2,6 @@ import './ResultsEntry.css'
 import React from 'react'
 import { BiDownArrow, BiUpArrow, BiRightArrow } from 'react-icons/bi'
 
-//DEBUG 
-const dummyData = [
-    { bolus: 5.5, bg: 87.89, arrow: 'up', label: 'Aggressive Bolus' },
-    { bolus: 4.1, bg: 120.01, arrow: 'right', label: 'Suggested Bolus' },
-    { bolus: 3.2, bg: 151.76, arrow: 'down', label: 'Passive Bolus' }
-]
-
 const arrowParser = (arrow) => {
     switch (arrow) {
         case 'up':

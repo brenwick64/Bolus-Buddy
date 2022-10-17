@@ -23,6 +23,7 @@ const variants = {
 
 
 function Main() {
+    const [infoToggled, setInfoToggled] = useState(false)
     const [completedCount, setCompletedCount] = useState(0);
     const initialState = { carbs: "", bg: "", basal: "", bolus: "" };
     const [state, updateState] = useReducer(
@@ -32,6 +33,10 @@ function Main() {
         }),
         initialState
     );
+
+    const toggleInfo = () => {
+        setInfoToggled(!infoToggled)
+    }
 
     useEffect(() => {
         // Extracts completion state from child component's state
@@ -55,15 +60,15 @@ function Main() {
             exit='exit'
             transition={1000}
         >
-            <InfoButton />
+            <InfoButton infoToggled={infoToggled} toggleInfo={toggleInfo} />
             <NotificationBanner />
             <div className=''></div>
             <ProgressBar completedCount={completedCount} />
             <div className='tile-container'>
-                <Tile updateState={updateState} metric='carbs' label='Carbs (g)' img={Carbs} />
-                <Tile updateState={updateState} metric='bg' label='BG (u/h)' img={BG} />
-                <Tile updateState={updateState} metric='basal' label='Basal Rate (m/u)' img={Basal} />
-                <Tile updateState={updateState} metric='bolus' label='Previous Bolus (u)' img={Bolus} />
+                <Tile infoToggled={infoToggled} tooltipText='The amount of bolus insulin (u) delivered in the past hour.' updateState={updateState} metric='carbs' label='Carbs (g)' img={Carbs} />
+                <Tile infoToggled={infoToggled} tooltipText='Your current blood glucose (bg) level at the time of a bolus.' updateState={updateState} metric='bg' label='BG (u/h)' img={BG} />
+                <Tile infoToggled={infoToggled} tooltipText='The basal insulin rate (m/u) configured by your medical provider.' updateState={updateState} metric='basal' label='Basal Rate (m/u)' img={Basal} />
+                <Tile infoToggled={infoToggled} tooltipText='The amount of bolus insulin (u) delivered in the past hour.' updateState={updateState} metric='bolus' label='Previous Bolus (u)' img={Bolus} />
             </div>
             <div className='bottom'>
                 <SubmitButton completedCount={completedCount} state={state} />
