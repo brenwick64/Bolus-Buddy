@@ -69,7 +69,7 @@
 @keyframes dropInMobile {
     0% {
         opacity: 1;
-        transform: translateY(-150%)
+        transform: translateY(-170%)
     }
 
     100% {
@@ -86,7 +86,7 @@
 
     100% {
         opacity: 1;
-        transform: translateY(-150%)
+        transform: translateY(-170%)
     }
 }
 
@@ -95,16 +95,16 @@
 @media screen and (max-width: 500px) {
 
     .notification-banner {
-        transform: translateY(-150%);
+        transform: translateY(-170%);
         padding: 0.75rem 1.25rem;
     }
 
     .notification-active {
         animation: dropInMobile 0.3s ease-out forwards;
-        animation-delay: 1s;
+        animation-delay: 1.2s;
     }
 
     .notification-dismissed {
-        animation: dropOutMobile 0.3s ease-out forwards;
+        animation: dropOutMobile 0.5s ease-out forwards;
     }
 }
