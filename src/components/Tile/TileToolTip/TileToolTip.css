@@ -41,6 +41,11 @@
     animation-delay: 0s !important;
 }
 
+.tile-tooltip-disabled {
+    animation: none;
+    /* overrides specificity of custom animation times for cleanup */
+}
+
 .carbs-tooltip {
     animation-delay: 0.1s;
 }

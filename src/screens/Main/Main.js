@@ -23,7 +23,7 @@ const variants = {
 
 
 function Main() {
-    const [infoToggled, setInfoToggled] = useState(false)
+    const [infoToggled, setInfoToggled] = useState(null)
     const [completedCount, setCompletedCount] = useState(0);
     const initialState = { carbs: "", bg: "", basal: "", bolus: "" };
     const [state, updateState] = useReducer(
