@@ -13,8 +13,6 @@ Using data scraped from the user's insulin pump manufacturer, Bolus Buddy is abl
 
 
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started (Client App)
 
@@ -32,7 +30,7 @@ Since the ``package.json`` file contains the dependencies, you will need npm ins
 
 ### Installation
 
-_Below are the steps to install and run the client locally on yo._
+_Below are the steps to install and run the client locally on your machine._
 
 1. Clone the repo
    ```sh
